@@ -19,4 +19,8 @@ npm install
 
 ## Scripts
 
-1. To test the general OpenAI use case where you interact with an AI model (similar to ChatGPT), run `npm run start:general`
+1. To test the general OpenAI use case where you interact with an AI model (similar to ChatGPT), run the following:
+
+```
+npm run start:general
+```
