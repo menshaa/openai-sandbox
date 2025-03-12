@@ -1,0 +1,16 @@
+{
+  "name": "openai-sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:general": "node javascript/general/index.js"
+  },
+  "keywords": [],
+  "author": "Hussein Menshawi",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.87.3"
+  }
+}
