@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:general": "node javascript/general/index.js"
+    "start:general": "node javascript/general/index.js",
+    "start:image-analyzer": "node javascript/image-analyzer/index.js"
   },
   "keywords": [],
   "author": "Hussein Menshawi",
