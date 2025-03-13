@@ -1,5 +1,4 @@
 const OpenAI = require("openai");
-const readline = require("readline");
 
 const {
   DEFAULT_MESSAGES_PAYLOAD,
@@ -70,7 +69,7 @@ class OpenAIService {
     }
 
     this.rl.question(
-      `${COLORS.BLUE}${this.userName}: ${COLORS.RESET} `,
+      `${COLORS.BLUE}${this.userName}: ${COLORS.RESET}`,
       async (userResponse) => {
         if (userResponse.trim() === "") {
           console.log(
@@ -86,15 +85,13 @@ class OpenAIService {
           const stream = await this.generateAIResponseStream();
 
           let accumulatedResponse = "";
+          process.stdout.write(`${COLORS.GREEN}AI: ${COLORS.RESET}`);
           for await (const chunk of stream) {
             const content = chunk?.choices?.[0]?.delta?.content;
             if (content !== undefined) {
+              process.stdout.write(`${content}`);
               accumulatedResponse += content;
-              readline.clearLine(process.stdout, 0);
-              readline.cursorTo(process.stdout, 0);
-              process.stdout.write(
-                `${COLORS.GREEN}AI: ${COLORS.RESET}${accumulatedResponse}`
-              );
+
               await delay();
             }
           }
